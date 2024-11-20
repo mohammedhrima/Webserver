@@ -1,5 +1,0 @@
-HTTP/1.0 200 OK
-Content-Type: text/html
-Content-Length: 49
-
-<html><body><h1>Hello from CGI</h1></body></html>
