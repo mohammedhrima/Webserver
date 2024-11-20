@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookie Test</title>
+  </head>
+  <body>
+    <h1>Send GET Request with Cookie</h1>
+    <button onclick="sendRequest('/cgi/get/cookie/file.py')">
+      To Python script
+    </button>
+    <button onclick="sendRequest('/cgi/get/cookie/file.php')">
+      To PHP script
+    </button>
+    <div class="div"></div>
+
+    <script>
+      function sendRequest(uri) {
+        // Set the cookie
+        document.cookie = "user=mohammed;";
+
+        // Send GET request to CGI file
+        fetch(uri, {
+          method: "GET",
+          credentials: "same-origin", // Include cookies in the request
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.text();
+          })
+          .then((data) => {
+            document.getElementsByClassName("div")[0].innerHTML = data;
+            // console.log("Response from CGI:", data);
+            // alert("Response from CGI: " + data);
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            alert("Error occurred. See console for details.");
+          });
+      }
+    </script>
+  </body>
+</html>
