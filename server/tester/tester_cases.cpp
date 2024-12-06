@@ -36,30 +36,30 @@ using namespace std;
 
 vector<string> generate_tests()
 {
-    // string body = "name=mohammed&age=15";
-    // int i = 0;
-    // while (i < 10)
-    // {
-    //     body += body;
-    //     i++;
-    // };
+    string body = "name=mohammed&age=15";
+    int i = 0;
+    while (i < 10)
+    {
+        body += body;
+        i++;
+    };
     string tests[] = {
         "GET http://name2/files/001.txt HTTP/1.1\r\n"
         "Host: name1\r\n"
         "\r\n"
-        // "GET /test1/files/003.txt HTTP/1.1\r\n"
-        // "Host: name1\r\n"
-        // "\r\n"
-        // "Host: 127.0.0.1:17000\r\n"
-        // "GET /test1/files/001.txt HTTP/1.1\r\n"
-        // "Host: name1\r\n"
-        // "Content-Length: " +
-        //     to_string(body.length()) + "\r\n"
-        //                                "\r\n" +
-        //     body
-        // "GET /test1/files/003.txt HTTP/1.1\r\n"
-        // "Host: name1\r\n"
-        // "\r\n"
+        "GET /test1/files/003.txt HTTP/1.1\r\n"
+        "Host: name1\r\n"
+        "\r\n"
+        "Host: 127.0.0.1:17000\r\n"
+        "GET /test1/files/001.txt HTTP/1.1\r\n"
+        "Host: name1\r\n"
+        "Content-Length: " +
+            to_string(body.length()) + "\r\n"
+                                       "\r\n" +
+            body + 
+        "GET /test1/files/003.txt HTTP/1.1\r\n"
+        "Host: name1\r\n"
+        "\r\n"
         ,
 
         // "GET /001.txt HTTP/1.1\n"
